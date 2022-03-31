@@ -8,6 +8,7 @@ const Produtos1 = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  color: blue;
 `
 
 const Produtos2 = styled.div`
@@ -15,6 +16,12 @@ const Produtos2 = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
+  color: blue;
+  background-color: whitesmoke;
+
+  &:active {
+    color: red;
+  };
 `
 
 const ProdutosDiv = styled.div`

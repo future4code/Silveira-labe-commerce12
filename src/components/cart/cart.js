@@ -5,6 +5,12 @@ import styled from 'styled-components';
 const ListaCartContainer = styled.div`
   border: 4px solid white;
   padding: 10px;
+  color: blue;
+  
+  &:hover {
+    color: red;
+  }
+
 `;
 
 const CartContainer = styled.div`
