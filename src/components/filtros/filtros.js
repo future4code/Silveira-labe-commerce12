@@ -1,17 +1,20 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const FilContainer = styled.div`
-  border: 1px solid black;
-  padding: 8px;
-`;
-
 const IPContainer = styled.label`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  text-decoration-color: 1px white;
 `
+
+const FilContainer = styled.div`
+  border: 3px solid blue;
+  padding: 12px;
+`;
+
+
 
 export class Filtros extends React.Component {
   render() {

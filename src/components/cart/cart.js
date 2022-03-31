@@ -3,13 +3,13 @@ import { Itens } from './itens';
 import styled from 'styled-components';
 
 const ListaCartContainer = styled.div`
-  border: 1px solid black;
-  padding: 8px;
+  border: 4px solid white;
+  padding: 10px;
 `;
 
 const CartContainer = styled.div`
   display: grid;
-  gap: 8px;
+  gap: 12px;
 `
 
 export class Cart extends React.Component {
@@ -28,9 +28,9 @@ export class Cart extends React.Component {
       <h3>Carrinho:</h3>
       <CartContainer>
         {this.props.produtosCart.map((produtos) => {
-          return <ListaCartContainer 
+          return <Itens 
                     cartItem={produtos} 
-                    RemoveProdutosCart={this.props.RemoveProdutosCart}
+                    onRemoveProdutosCart={this.props.onRemoveProdutosCart}
                   />
         })}
       </CartContainer>

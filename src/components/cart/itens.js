@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ItensContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
-  gap: 4px;
+  gap: 8px;
   align-items: center;
 
   p {
@@ -19,7 +19,7 @@ export class Itens extends React.Component {
       <p>{this.props.cartItem.quantidade}x</p>
       <p>{this.props.cartItem.nome}</p>
       <button 
-        onClick={() => this.props.RemoveProdutosCart(this.props.cartItem.id)}
+        onClick={() => this.props.onRemoveProdutosCart(this.props.cartItem.id)}
       >
         Remover
       </button>

@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 
+
 const Card = styled.div`
-  border: 1px solid black;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
 `;
@@ -29,7 +30,7 @@ export class ProdutosAdd extends React.Component {
       <img src={produtos.foto}/>
       <Informacoes>
         <p>{produtos.nome}</p>
-        <p>R${produtos.preco},00</p>
+        <p>US${produtos.preco},00</p>
         <AdicionarCart onClick={() => this.props.onAddProdutosCart(produtos.id)}>
           Adicionar ao carrinho
         </AdicionarCart>

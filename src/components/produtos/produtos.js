@@ -2,18 +2,19 @@ import React from 'react'
 import { ProdutosAdd } from './produtosAdd';
 import styled from 'styled-components';
 
+
 const Produtos1 = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 20px;
 `
 
 const Produtos2 = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
 `
 
 const ProdutosDiv = styled.div`
@@ -26,7 +27,7 @@ export class Produtos extends React.Component {
     sort: 'DECRESCENTE'
   }
 
-  getFiltroLista = () => {MenorFiltro
+  getFiltroLista = () => {
     return this.props.produtos
       .filter((produtos) => this.props.MaiorFiltro ? produtos.preco < this.props.MaiorFiltro : true)
       .filter((produtos) => this.props.MenorFiltro ? produtos.preco > this.props.MenorFiltro : true)
@@ -34,7 +35,7 @@ export class Produtos extends React.Component {
       .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.preco - b.preco : b.preco - a.preco)
   }
 
-  onChangeSort = (event) => {NomeFiltro
+  onChangeSort = (event) => {
     this.setState({sort: event.target.value})
   }
 
@@ -53,9 +54,9 @@ export class Produtos extends React.Component {
       </Produtos1>
       <Produtos2>
         {filtroLista.map((produtos) => {
-          return <ProdutosCard
-            product={produtos}
-            onAddProdutosAdd={this.props.onAddProdutosCart}
+          return <ProdutosAdd
+            produtos={produtos}
+            onAddProdutosCart={this.props.onAddProdutosCart}
           />
         })}
       </Produtos2>

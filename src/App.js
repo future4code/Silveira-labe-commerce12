@@ -3,63 +3,73 @@ import styled from 'styled-components'
 import { Filtros } from './components/filtros/filtros';
 import { Produtos } from './components/produtos/produtos';
 import { Cart } from './components/cart/cart';
-
+import falcon9 from './img/falcon9.png'
+import falconH from './img/falconH.jpg'
+import starship24 from './img/starship24.jpg'
+import soyuz from './img/soyuz.jpg'
+import vega from './img/vega.jpg'
+import sls from './img/sls.jpg'
+import atlasv from './img/atlasv.jpg'
+import electron from './img/electron.jpg'
 
 const StoreContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  padding: 25px;
-  gap: 12px;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 15px;
+  gap: 6px;
+  background-image: url(https://wallpapercave.com/wp/wp9141051.jpg);
 `;
+
+
 
 const produtos = [
   {
     id: 1,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'Falcon 9',
+    preco: 75000000.00,
+    foto: falcon9
   },
   {
     id: 2,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'Falcon Heavy',
+    preco: 125000000.00,
+    foto: falconH
   },
   {
     id: 3,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'Starship',
+    preco: 20000000.00,
+    foto: starship24
   },
   {
     id: 4,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'Soyuz',
+    preco: 150000000.00,
+    foto: soyuz
   },
   {
     id: 5,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'Vega',
+    preco: 500000000.00,
+    foto: vega
   },
   {
     id: 6,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'SLS',
+    preco: 2000000000.00,
+    foto: sls
   },
   {
     id: 7,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'Atlas V',
+    preco: 350000000.00,
+    foto: atlasv
   },
   {
     id: 8,
-    nome: '',
-    preco: '',
-    foto: ''
+    nome: 'Electron',
+    preco: 65000000.00,
+    foto: electron
   },
 ]
 
@@ -104,9 +114,9 @@ class App extends React.Component {
 
       this.setState({produtosCart: novosProdutosCart})
     } else {
-      const produtosAdd = produtos.find(produtos => productId === produtos.id)
+      const produtosAdd = produtos.find(produtos => produtosId === produtos.id)
 
-      const novosProdutosCart = [...this.state.novosProdutosCart, {...produtosAdd, quantidade: 1}]
+      const novosProdutosCart = [...this.state.produtosCart, {...produtosAdd, quantidade: 1}]
 
       this.setState({produtosCart: novosProdutosCart})
     }
@@ -137,14 +147,14 @@ class App extends React.Component {
           onChangeMaiorFiltro={this.onChangeMaiorFiltro}            
           onChangeNomeFiltro={this.onChangeNomeFiltro}                  
         />
-        <Filtros 
-          products={products}
-          minFilter={this.state.minFilter}
-          maxFilter={this.state.maxFilter}
-          nameFilter={this.state.nameFilter}
-          onAddProductToCart={this.onAddProductToCart}
+        <Produtos 
+          produtos={produtos}
+          MenorFiltro={this.state.MenorFiltro}
+          MaiorFiltro={this.state.MaiorFiltro}
+          NomeFiltro={this.state.NomeFiltro}
+          onAddProdutosCart={this.onAddProdutosCart}
         />
-        <ShoppingCart
+        <Cart
           produtosCart={this.state.produtosCart}
           onRemoveProdutosCart={this.onRemoveProdutosCart}
         />
