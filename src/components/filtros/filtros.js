@@ -6,12 +6,18 @@ const IPContainer = styled.label`
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 12px;
-  text-decoration-color: 1px white;
+  color: blue;
+  padding: 2px;
+
+  &:hover {
+    color: red;
+  };
 `
 
 const FilContainer = styled.div`
   border: 3px solid blue;
   padding: 12px;
+
 `;
 
 

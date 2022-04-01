@@ -13,12 +13,21 @@ import atlasv from './img/atlasv.jpg'
 import electron from './img/electron.jpg'
 
 const StoreContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  padding: 15px;
+  display: flex;
+  flex-direction: table;
+
+  padding: 12px;
   gap: 6px;
   background-image: url(https://wallpapercave.com/wp/wp9141051.jpg);
+  background-color: aqua;
+  background-size: 3840px × 2160px;
 `;
+ 
+const Cabeça = styled.div`
+display: grid;
+grid-template-columns: 2fr;
+
+`
 
 
 
@@ -27,7 +36,7 @@ const produtos = [
     id: 1,
     nome: 'Falcon 9',
     preco: 75000000.00,
-    foto: falcon9
+    foto: falcon9,
   },
   {
     id: 2,
@@ -84,7 +93,9 @@ class App extends React.Component {
      
     ]
   }
+  
 
+ 
   onChangeMenorFiltro = (event) => {
     this.setState({MenorFiltro: event.target.value})
   }
@@ -138,7 +149,11 @@ class App extends React.Component {
 
   render() {
     return (
+      
+      <Cabeça>
+       <title>Lojinha de Foguetinhos</title>
       <StoreContainer>
+        
         <Filtros
           MenorFiltro={this.state.MenorFiltro}
           MaiorFiltro={this.state.MaiorFiltro}
@@ -147,7 +162,9 @@ class App extends React.Component {
           onChangeMaiorFiltro={this.onChangeMaiorFiltro}            
           onChangeNomeFiltro={this.onChangeNomeFiltro}                  
         />
+       
         <Produtos 
+          
           produtos={produtos}
           MenorFiltro={this.state.MenorFiltro}
           MaiorFiltro={this.state.MaiorFiltro}
@@ -159,6 +176,7 @@ class App extends React.Component {
           onRemoveProdutosCart={this.onRemoveProdutosCart}
         />
       </StoreContainer>
+      </Cabeça>
     );
   }
 }

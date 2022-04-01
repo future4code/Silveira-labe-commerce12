@@ -14,17 +14,35 @@ const Informacoes = styled.div`
   padding: 16px;
 
   p {
-    margin: 4px 0;
+    margin: 5px 0;
   }
 `
 
 const AdicionarCart = styled.button`
   align-self: center;
   margin-top: 4px;
+  color: black;
+  background-color: aqua;
+  
+  &:hover {
+    color: white;
+    background-color: black;
+  };
+
+  &:active {
+    color: red;
+    background-color: white;
+  };
+  
+
+
 `
 
 export class ProdutosAdd extends React.Component {
   render() {
+    
+      
+    
     const produtos = this.props.produtos
     return <Card>
       <img src={produtos.foto}/>
